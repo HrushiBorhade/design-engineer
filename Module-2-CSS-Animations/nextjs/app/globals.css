@@ -135,3 +135,28 @@
 .animate-letter {
   animation: letterFadeIn 1.3s cubic-bezier(0.19, 1, 0.22, 1) backwards;
 }
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.image-reveal {
+  clip-path: inset(0 0 100% 0);
+  animation: reveal 1s forwards cubic-bezier(0.77, 0, 0.175, 1);
+}
+ 
+ 
+@keyframes reveal {
+  to {
+    clip-path: inset(0px 0px 0%);
+  }
+}
+
+
+
+
+.clip-path-container {
+  z-index: 10;
+  transition: clip-path 0.25s ease;
+  clip-path: inset(0px 75% 0px 0% round 17px);
+}
