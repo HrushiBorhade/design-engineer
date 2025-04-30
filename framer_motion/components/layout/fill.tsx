@@ -7,16 +7,15 @@ export default function FillLayout() {
     return (
         <div className='flex relative items-center justify-center w-full h-full flex-grow'>
             <motion.div
-                className='bg-accent rounded-lg cursor-pointer'
+                className='bg-accent cursor-pointer'
                 onClick={() => setOpen(!open)}
                 layout
                 style={
                     open
-                        ? { position: "absolute", inset: 0, width: "100%", height: "100%" }
-                        : { height: 48, width: 48 }
+                        ? { position: "absolute", inset: 0, width: "100%", height: "100%", borderRadius: "4px" }
+                        : { height: 48, width: 48, borderRadius: "4px" }
                 }
             >
-
             </motion.div>
         </div>
     )
