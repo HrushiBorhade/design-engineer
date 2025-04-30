@@ -13,12 +13,35 @@ export default function CopyButton() {
     return (
         <Button className="w-fit p-1 px-2 cursor-pointer" variant="outline" aria-label="Copy code snippet" onClick={() => setCopied(true)}>
             <AnimatePresence mode="wait">
-                {
-                    copied ? (
-                        <motion.span key="checkmark" variants={variants} initial="hidden" animate="visible" exit="hidden"><Check className="w-4 h-4 " /></motion.span>
-                    ) : (<motion.span key="copy" variants={variants} initial="hidden" animate="visible" exit="hidden"><Copy className="w-4 h-4 " /></motion.span>
-                    )
-                }
+                {copied ? (
+                    <motion.span
+                        key="checkmark"
+                        variants={variants}
+                        transition={{
+                            duration: 0.15,
+                            // ease: "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+                        }}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                    >
+                        <Check className="w-4 h-4" />
+                    </motion.span>
+                ) : (
+                    <motion.span
+                        key="copy"
+                        variants={variants}
+                        transition={{
+                            duration: 0.15,
+                            // ease: "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+                        }}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                    >
+                        <Copy className="w-4 h-4" />
+                    </motion.span>
+                )}
 
             </AnimatePresence>
         </Button>

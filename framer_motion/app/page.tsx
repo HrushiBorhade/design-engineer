@@ -1,5 +1,7 @@
 import CopyButton from "@/components/basics/copy-button";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import ResizeContent, { AnimateHeight } from "@/components/basics/resize-content";
+import SmoothButton from "@/components/basics/smooth-button";
+import { ChevronRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -17,8 +19,16 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2 ml-3">
                 <div className="flex flex-col gap-2 w-full rounded-lg border border-dashed p-4">
-                    <p className="text-xl font-medium tracking-tight">Copy Button :</p>
+                  <p className="text-xl font-medium tracking-tight">Copy Button :</p>
                   <CopyButton />
+                </div>
+                <div className="flex flex-col gap-2 w-full rounded-lg border border-dashed p-4">
+                  <p className="text-xl font-medium tracking-tight">Smooth Button :</p>
+                  <SmoothButton />
+                </div>
+                <div className="flex flex-col gap-2 w-full rounded-lg p-4">
+                  <p className="text-xl font-medium tracking-tight">Resize Content :</p>
+                  <ResizeContent />
                 </div>
               </div>
             </div>
