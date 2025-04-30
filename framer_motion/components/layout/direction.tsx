@@ -2,9 +2,14 @@
 import { motion } from 'motion/react'
 import React, { useState } from 'react'
 import { Button } from '../ui/button'
+import { cn } from '@/lib/utils'
 
 export default function ToggleDirection() {
     const [isVertical, setIsVertical] = useState<boolean>(false)
+    const [activeElement, setActiveElement] = useState<string>("")
+
+    const Elements = ["Item 1", "Item 2", "Item 3", "Item 4"
+    ]
     return (
         <div className='flex relative flex-col items-center gap-3 w-full h-full flex-grow'>
             <Button variant="outline" className='w-fit' onClick={() => setIsVertical(!isVertical)}>Toggle</Button>
@@ -18,10 +23,29 @@ export default function ToggleDirection() {
                         : { flexDirection: "row" }
                 }
             >
-                <motion.p key="item-1" layout>Item 1</motion.p>
-                <motion.p key="item-2" layout >Item 2</motion.p>
-                <motion.p key="item-3" layout>Item 3</motion.p>
-                <motion.p key="item-4" layout>Item 4</motion.p>
+                {Elements.map((_element) => (
+                    <motion.div
+                        layout
+                        className={cn(
+                            "relative cursor-pointer px-2 py-1 text-sm outline-none transition-colors",
+                            activeElement === _element ? "text-gray-800" : "text-gray-700",
+                        )}
+                        tabIndex={0}
+                        key={_element}
+                        onFocus={() => setActiveElement(_element)}
+                        onMouseOver={() => setActiveElement(_element)}
+                        onMouseLeave={() => setActiveElement(_element)}
+                    >
+                        {activeElement === _element ? (
+                            <motion.div
+                                layoutId="tab-indicator"
+                                className="absolute inset-0 rounded-lg bg-black/5"
+                            />
+                        ) : null}
+                        <span className="relative text-inherit">{_element}</span>
+                    </motion.div>
+                ))}
+
 
             </motion.div>
         </div>
