@@ -15,9 +15,9 @@ export default function ResizeContent() {
                         This is a fake family drawer. Animating height is tricky, but
                         satisfying when it works.
                     </p>
-                    {showContent ? (
-                        <p>This extra content will change the height of the drawer.</p>
-                    ) : null}
+                    {showContent && (
+                        <p key={`extra-content`}>This extra content will change the height of the drawer.</p>
+                    )}
                 </div>
             </AnimateHeight>
         </div>

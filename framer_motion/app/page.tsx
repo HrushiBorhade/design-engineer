@@ -1,6 +1,7 @@
 import CopyButton from "@/components/basics/copy-button";
 import ResizeContent, { AnimateHeight } from "@/components/basics/resize-content";
 import SmoothButton from "@/components/basics/smooth-button";
+import FillLayout from "@/components/layout/fill";
 import { ChevronRight } from "lucide-react";
 
 export default function Home() {
@@ -26,9 +27,15 @@ export default function Home() {
                   <p className="text-xl font-medium tracking-tight">Smooth Button :</p>
                   <SmoothButton />
                 </div>
-                <div className="flex flex-col gap-2 w-full rounded-lg p-4">
-                  <p className="text-xl font-medium tracking-tight">Resize Content :</p>
-                  <ResizeContent />
+                <AnimateHeight>
+                  <div className="flex border border-dashed flex-col gap-2 w-full rounded-lg p-4">
+                    <p className="text-xl font-medium tracking-tight">Resize Content :</p>
+                    <ResizeContent />
+                  </div>
+                </AnimateHeight>
+                <div className="flex border border-dashed flex-col gap-2 w-full rounded-lg p-4 h-[30vh]">
+                  <p className="text-xl font-medium tracking-tight">Fill Content:</p>
+                  <FillLayout />
                 </div>
               </div>
             </div>
