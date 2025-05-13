@@ -22,10 +22,10 @@ export default function ThemeModeToggle() {
       name: "dark",
       Icon: MoonStar,
     },
-    {
-      name: "system",
-      Icon: Monitor,
-    },
+    // {
+    //   name: "system",
+    //   Icon: Monitor,
+    // },
     {
       name: "light",
       Icon: Sun,
@@ -33,7 +33,7 @@ export default function ThemeModeToggle() {
   ];
 
   return (
-    <Tabs className="z-50" value={theme} defaultValue="system" onValueChange={setTheme}>
+    <Tabs value={theme} defaultValue="system" onValueChange={setTheme}>
       <TabsList className="border bg-background rounded-lg">
         {MODES.map((mode) => (
           <TabsTrigger key={mode.name} value={mode.name} className="rounded-md p-1">

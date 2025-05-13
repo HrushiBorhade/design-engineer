@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { META_THEME_COLORS } from "@/config/site";
-import ThemeModeToggle from "@/components/theme/theme-toggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,7 +48,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-svh flex-col bg-background">
+          <div className="relative flex flex-col bg-background isolate">
             {children}
           </div>
         </ThemeProvider>
