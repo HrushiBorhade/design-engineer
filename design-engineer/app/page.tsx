@@ -1,4 +1,5 @@
 
+import ItemLink from '@/components/item-link'
 import ThemeModeToggle from '@/components/theme/theme-toggle'
 import { siteConfig } from '@/config/site'
 import Image from 'next/image'
@@ -9,7 +10,8 @@ export default function Home() {
     <div className="flex flex-col h-[100dvh] w-full relative isolate">
 
       {/* Main content */}
-      <main className='max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-x  mx-auto w-full border-dashed flex-1 flex'>
+      <main className='max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-x  mx-auto w-full border-dashed flex-1 flex flex-col gap-2 p-4'>
+        <ItemLink text='hover link' src='' />
       </main>
 
       {/* Footer */}
