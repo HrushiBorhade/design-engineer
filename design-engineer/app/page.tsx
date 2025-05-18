@@ -9,13 +9,14 @@ import { WaveLoader } from '@/components/wave'
 import { siteConfig } from '@/config/site'
 import Image from 'next/image'
 import Link from 'next/link'
+import DynamicIsland from './dynamic-island'
 
 export default function Home() {
   return (
     <div className="flex flex-col h-[100dvh] w-full relative isolate">
 
       {/* Main content */}
-      <main className='max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-x  mx-auto w-full border-dashed flex-1 flex flex-col gap-2 p-4'>
+      <main className='max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-x  mx-auto w-full border-dashed flex-1 flex flex-col gap-2 p-4 justify-start'>
         <ItemLink text='hover link' src='' />
         <TextShimmerLoader />
         <WaveLoader />
@@ -26,6 +27,7 @@ export default function Home() {
         <AnimatedWand />
         <WandSparkles />
         <AudioRecorder />
+        <DynamicIsland />
       </main>
 
       {/* Footer */}
