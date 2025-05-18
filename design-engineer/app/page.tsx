@@ -1,6 +1,11 @@
-
+import AudioRecorder from '@/components/audio'
+import { BouncingDots, TypingDots } from '@/components/dots'
+import { AnimatedWand, WandSparkles } from '@/components/icons/wand'
 import ItemLink from '@/components/item-link'
+import { PulseDotLoader, PulseLoader } from '@/components/pulse'
+import { TextShimmerLoader } from '@/components/shimmer-text'
 import ThemeModeToggle from '@/components/theme/theme-toggle'
+import { WaveLoader } from '@/components/wave'
 import { siteConfig } from '@/config/site'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +17,15 @@ export default function Home() {
       {/* Main content */}
       <main className='max-w-[1400px] min-[1800px]:max-w-screen-2xl min-[1400px]:border-x  mx-auto w-full border-dashed flex-1 flex flex-col gap-2 p-4'>
         <ItemLink text='hover link' src='' />
+        <TextShimmerLoader />
+        <WaveLoader />
+        <BouncingDots />
+        <TypingDots />
+        <PulseLoader />
+        <PulseDotLoader />
+        <AnimatedWand />
+        <WandSparkles />
+        <AudioRecorder />
       </main>
 
       {/* Footer */}
